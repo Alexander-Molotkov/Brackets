@@ -1,3 +1,4 @@
+#include <stdio.h>
 #include <stdlib.h>
 #include "stack.h"
 
@@ -21,4 +22,19 @@ struct node* stack_add(struct node* old_head, char c){
 	struct node* n = create_node();
 	n->next = old_head;
 	n->c = c;
+	return n;
+}
+
+void print_stack(struct node* head){
+	
+	int i = 1;
+	struct node* n = head;
+	
+	do{
+		printf("node %d: %c\n", i, n->c);
+		if(n->next != NULL){
+			i++;
+			n = n->next;
+		}
+	}while(n->next != NULL);
 }

@@ -15,4 +15,6 @@ struct node* stack_add(struct node* old_head, char c);
 char stack_peek (struct node* head);
 struct node* stack_pop(struct node* old_head);
 
+void print_stack(struct node* head);
+
 #endif
