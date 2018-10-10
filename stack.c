@@ -17,12 +17,31 @@ void free_node(struct node* n){
 	free(n);
 }
 
+void free_stack(struct node* head){
+
+	struct node* n = head;
+	struct node* temp;
+	
+	while(n->next != NULL){
+		temp = n;
+		n = n->next;
+		free_node(temp);
+	}
+	if(n != NULL){
+		free_node(n);
+	}
+}
+
 struct node* stack_add(struct node* old_head, char c){
 
 	struct node* n = create_node();
 	n->next = old_head;
 	n->c = c;
 	return n;
+}
+
+char stack_peek(struct node* head){
+	return head->c;
 }
 
 void print_stack(struct node* head){
