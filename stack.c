@@ -44,6 +44,15 @@ char stack_peek(struct node* head){
 	return head->c;
 }
 
+struct node* stack_pop(struct node* old_head){
+	
+	struct node* n;
+	n = old_head->next;
+	free_node(old_head);
+
+	return n;
+}
+
 void print_stack(struct node* head){
 	
 	int i = 1;

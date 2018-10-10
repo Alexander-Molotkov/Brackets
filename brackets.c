@@ -1,18 +1,12 @@
-#include <stdio.h>
 #include "stack.h"
+#include "brackets.h"
 
-int main(){
+void init(char* filename){
 
 	struct node* stack;
 	stack = create_node();
 
-	stack = stack_add(stack, 'x');
-	stack = stack_add(stack, 'y');
-	stack = stack_add(stack, 'z');
-	printf("stack_peek() %c\n", stack_peek(stack));
 	
-	print_stack(stack);
-	free_stack(stack);
 
-	return 0;
+	free_stack(stack);
 }
